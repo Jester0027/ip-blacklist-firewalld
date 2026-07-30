@@ -1,0 +1,4 @@
+[project]
+name = "ips_blacklist"
+dynamic = ["version"]
+dependencies = ["requests"]
