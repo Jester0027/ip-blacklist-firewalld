@@ -1,0 +1,12 @@
+---
+- name: Reload systemd
+  become: true
+  ansible.builtin.systemd:
+    daemon_reload: true
+
+- name: Install dependencies
+  become: true
+  ansible.builtin.pip:
+    executable: /opt/update-blacklist/.venv/bin/pip
+    chdir: /opt/update-blacklist
+    name: .

@@ -23,12 +23,12 @@ def run_firewall_cmd(*args: tuple) -> str:
 
 
 def read_desired_entries(url: str) -> set[str]:
-    entries = set()
     response = requests.get(url)
-    for ip in response.text.splitlines():
-        entries.add(ip)
-
-    return entries
+    
+    if response.status_code >= 400:
+        raise RuntimeError(response.text)
+        
+    return set(response.text.splitlines())
 
 
 def ensure_ipset_exists(ipset: str, type: str = 'hash:ip') -> None:
@@ -101,7 +101,6 @@ def ensure_ipset_in_zone(ipset: str, zone: str = "drop") -> None:
             "--zone", zone,
             "--add-source", source,
         )
-        run_firewall_cmd("--reload")
 
 
 def main() -> None:
@@ -122,6 +121,7 @@ def main() -> None:
 
     ensure_ipset_in_zone(IPSET_NAME, zone="drop")
 
+    run_firewall_cmd("--reload")
     print("Done.")
 
 

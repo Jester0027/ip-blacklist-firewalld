@@ -2,3 +2,7 @@
 build
 ips_blacklist.egg-info
 
+.vagrant/
+.idea/
+.ansible/
+.vault-pass/

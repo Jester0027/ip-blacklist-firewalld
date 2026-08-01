@@ -1,0 +1,21 @@
+{
+  "files.associations": {
+    "**/roles/*/tasks/*.yml": "ansible",
+    "**/roles/*/handlers/*.yml": "ansible",
+    "**/roles/*/defaults/*.yml": "ansible",
+    "**/roles/*/vars/*.yml": "ansible",
+    "**/roles/*/meta/*.yml": "ansible",
+    "**/roles/*/files/*.yml": "ansible",
+    "**/roles/*/templates/*.yml": "ansible",
+    "**/playbooks/**/*.yml": "ansible",
+    "**/site.yml": "ansible",
+    "**/main.yml": "ansible",
+    "**/inventories/**/*.yml": "ansible",
+    "**/inventory/**/*.yml": "ansible",
+    "**/host_vars/**/*.yml": "ansible",
+    "**/group_vars/**/*.yml": "ansible",
+    "**/ansible.cfg": "ini",
+    "**/requirements.yml": "ansible"
+  },
+  "editor.formatOnSave": true
+}

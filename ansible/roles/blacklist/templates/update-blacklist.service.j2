@@ -1,0 +1,9 @@
+[Unit]
+Description=Updates the blacklist ipset for firewalld
+
+[Service]
+Type=Oneshot
+ExecStart=/opt/update-blacklist/.venv/bin/python3 /opt/update-blacklist/update-blacklist.py
+
+Environment=BLACKLISTED_IPS_URL={{ blacklist_blacklisted_ip_addresses_url }}
+Environment=IPSET_NAME={{ blacklist_ipset_name }}

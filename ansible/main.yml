@@ -1,0 +1,4 @@
+- name: Setup blacklisted ip adresses in the firewalld drop zone
+  hosts: server
+  roles:
+    - blacklist
